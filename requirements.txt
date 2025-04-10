@@ -1,0 +1,52 @@
+# Required Python packages for Quant-Aero-Log Framework
+
+# Core
+numpy==1.24.3
+pandas==1.5.3
+scikit-learn==1.2.2
+matplotlib==3.7.1
+xgboost==1.7.5
+tensorflow==2.12.0
+
+# Time & Date
+python-dateutil==2.8.2
+pytz==2023.3
+
+# API & Web
+requests==2.31.0
+aiohttp==3.8.5
+websockets==11.0.3
+
+# Database
+psycopg2-binary==2.9.6
+SQLAlchemy==2.0.15
+alembic==1.11.1
+
+# Configuration & Environment
+python-dotenv==1.0.0
+pyyaml==6.0.1
+
+# Visualization
+seaborn==0.12.2
+plotly==5.14.1
+bokeh==3.1.1
+
+# Logging & Monitoring
+structlog==23.1.0
+prometheus-client==0.17.0
+
+# Testing & Development
+pytest==7.3.1
+pytest-asyncio==0.21.1
+pytest-cov==4.1.0
+black==23.3.0
+mypy==1.3.0
+isort==5.12.0
+
+# Type Hints
+typing-extensions==4.6.3
+
+# Optional: Advanced Analytics
+statsmodels==0.14.0
+ta-lib==0.4.28
+arch==6.1.0
