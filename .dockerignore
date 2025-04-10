@@ -1,0 +1,92 @@
+# Version control
+.git
+.gitignore
+.gitattributes
+
+# Python
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.py[cod]
+*$py.class
+.pytest_cache
+.coverage
+htmlcov/
+.tox/
+.nox/
+.hypothesis/
+
+# Virtual Environment
+venv/
+env/
+ENV/
+.env
+.venv
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+
+# Build
+*.egg-info/
+dist/
+build/
+eggs/
+parts/
+bin/
+var/
+sdist/
+develop-eggs/
+.installed.cfg
+lib/
+lib64/
+
+# Logs
+*.log
+logs/
+log/
+
+# Data
+data/
+*.csv
+*.json
+*.pkl
+
+# Documentation
+docs/_build/
+site/
+
+# Docker
+.docker/
+
+# Development
+*.bak
+*.tmp
+*.temp
+.cache/
+.mypy_cache/
+
+# Test
+.coverage
+.pytest_cache/
+coverage.xml
+*.cover
+
+# Dependencies
+node_modules/
+bower_components/
+
+# Local development
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Monitoring
+prometheus_data/
+grafana_data/ 

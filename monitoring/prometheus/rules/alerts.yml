@@ -1,0 +1,102 @@
+groups:
+  - name: quantaerolog_alerts
+    rules:
+      # High CPU Usage
+      - alert: HighCPUUsage
+        expr: rate(process_cpu_seconds_total[5m]) > 0.8
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: High CPU usage detected
+          description: CPU usage is above 80% for 5 minutes
+
+      # High Memory Usage
+      - alert: HighMemoryUsage
+        expr: (process_resident_memory_bytes / container_memory_limit_bytes) > 0.85
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: High memory usage detected
+          description: Memory usage is above 85% for 5 minutes
+
+      # Service Down
+      - alert: ServiceDown
+        expr: up == 0
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: Service is down
+          description: Service {{ $labels.job }} has been down for more than 1 minute
+
+      # High Error Rate
+      - alert: HighErrorRate
+        expr: rate(quant_aero_api_errors_total[5m]) > 0.05
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: High error rate detected
+          description: Error rate is above 5% for 5 minutes
+
+      # Database Connection Issues
+      - alert: DatabaseConnectionIssues
+        expr: rate(quant_aero_db_connections[5m]) < 1
+        for: 2m
+        labels:
+          severity: critical
+        annotations:
+          summary: Database connection issues detected
+          description: Database connections are below normal for 2 minutes
+
+      # Model Accuracy Drop
+      - alert: ModelAccuracyDrop
+        expr: quant_aero_model_accuracy < 0.7
+        for: 10m
+        labels:
+          severity: warning
+        annotations:
+          summary: Model accuracy drop detected
+          description: Model accuracy has dropped below 70% for 10 minutes
+
+      # Slow Queries
+      - alert: SlowQueries
+        expr: rate(quant_aero_db_query_duration_seconds_bucket[5m])[10m:] > 1
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: Slow queries detected
+          description: Database queries are taking longer than expected
+
+      # Redis Issues
+      - alert: RedisDown
+        expr: redis_up == 0
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: Redis is down
+          description: Redis instance has been down for more than 1 minute
+
+      # Disk Space
+      - alert: LowDiskSpace
+        expr: node_filesystem_avail_bytes{mountpoint="/"} / node_filesystem_size_bytes{mountpoint="/"} * 100 < 10
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: Low disk space
+          description: Disk space usage is above 90%
+
+      # High Load Average
+      - alert: HighLoadAverage
+        expr: node_load1 > 8
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: High load average
+          description: System load is high for 5 minutes 

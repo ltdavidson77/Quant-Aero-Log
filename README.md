@@ -132,7 +132,7 @@ For detailed documentation, visit our [documentation site](https://quant-aero-lo
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project IS NOT licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Support
 
