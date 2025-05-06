@@ -1,6 +1,3 @@
-Thanks for the clarification. Here's a revised version of your README.md to reflect its true purpose as a quantitative analysis tool for stocks and cryptocurrency:
-
-
 Quant-Aero-Log
 ⚠️ IMPORTANT LEGAL NOTICE
 
